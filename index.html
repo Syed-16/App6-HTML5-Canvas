@@ -54,9 +54,9 @@ function draw_c() {
 	var c_canvas = document.getElementById("myCanvas"); // shows image
 	var c_context = c_canvas.getContext("2d"); // drawing context
 	var pikachu = new Image(); // shows image of Pikachu
- 		pikachu.src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png";
+ 		pikachu.src = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"; // image address
  	 	pikachu.onload = function() {
-    		context.drawImage(pikachu, 250, 250);
+    		context.drawImage(pikachu, 250, 150, 100, 100); // size and location
   };
 }
 function clearCanvas() {
@@ -86,9 +86,6 @@ function clearCanvas() {
     left: 0vw;
     z-index: 1;
 }
-canvas {
-  border: 2px solid black;
-}
 </style>
 
 <body>
@@ -97,7 +94,7 @@ canvas {
 </div>
 	
 <div id="content" class="w3-container">
-	<canvas id="myCanvas" width="400" height="300"></canvas>
+	<canvas id="myCanvas" width="400" height="300" style="border: 2px solid black ;"></canvas>
    
 	<p> <a href="#" onclick="draw_a();" class="w3-btn w3-black">Draw a rectangle!</a> </p>
 	<p> <a href="#" onclick="draw_b();" class="w3-btn w3-black">Who coded this app?</a> </p>
