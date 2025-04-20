@@ -56,12 +56,12 @@ function draw_c() {
 	var pikachu = new Image(); // shows image of Pikachu
  		pikachu.src = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"; // image address
  	 	pikachu.onload = function() {
-    		context.drawImage(pikachu, 250, 150, 100, 100); // size and location
+    		c_context.drawImage(pikachu, 250, 150, 100, 100); // size and location
   };
 }
 function clearCanvas() {
       var canvas = document.getElementById("myCanvas"); // clears canvas
-      var clear_context = clear_canvas.getContext("2d"); // drawing context
+      var clear_context = canvas.getContext("2d"); // drawing context
      		clear_context.clearRect(0, 0, canvas.width, canvas.height);
 }
 </script>
