@@ -38,34 +38,32 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 var docMod = document.lastModified; // loads last modified time stamp into docMod variable
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
-
-function draw_a() {
-var a_canvas = document.getElementById("a"); // first canvas to show border
-}			
-function draw_b() { 
-  var b_canvas = document.getElementById("b"); // second canvas to show rectangle
-  var b_context = b_canvas.getContext("2d"); // drawing context for second canvas
-  b_context.fillRect(50, 25, 150, 100); // draws rectangle
-	b_context.clearRect(50, 25, 150, 100); // clears rectangle
+			
+function draw_a() { 
+  	var a_canvas = document.getElementById("myCanvas"); // shows rectangle
+  	var a_context = a_canvas.getContext("2d"); // drawing context
+  		a_context.fillRect(50, 25, 150, 100); // draws rectangle
+}
+function draw_b() {
+	var b_canvas = document.getElementById("myCanvas"); // shows my name
+	var b_context = b_canvas.getContext("2d"); // drawing context
+		b_context.font = "bold 12px sans-serif"; // changes font style
+		b_context.fillText("Syed Akbar", 248, 43);
+		b_context.fillText("y", 58, 165);	
 }
 function draw_c() {
-var c_canvas = document.getElementById("c"); // third canvas to show ?
-var context = c_canvas.getContext("2d"); // pushes canvas through
-}
-function draw_d() {
-var d_canvas = document.getElementById("d"); // fourth canvas to show name
-var d_context.font = "bold 12px sans-serif"; // changes font style
-d_context.fillText("Syed Akbar", 248, 43);
-d_context.fillText("y", 58, 165);	
-}
-function draw_e() {
-var e_canvas = document.getElementById("e"); // fifth canvas to show image
-var e_context = canvas.getContext("2d"); // drawing context for fifth canvas
-var pikachu = new Image(); // shows image of Pikachu
-  pikachu.src = "images/https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png";
-  pikachu.onload = function() {
-    context.drawImage(pikachu, 0, 0);
+	var c_canvas = document.getElementById("myCanvas"); // shows image
+	var c_context = c_canvas.getContext("2d"); // drawing context
+	var pikachu = new Image(); // shows image of Pikachu
+ 		pikachu.src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png";
+ 	 	pikachu.onload = function() {
+    		context.drawImage(pikachu, 0, 0);
   };
+}
+function clearCanvas() {
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 </script>
 
@@ -97,27 +95,17 @@ var pikachu = new Image(); // shows image of Pikachu
 </div>
 	
 <div id="content" class="w3-container">
-	<p> <canvas id="a" width="300" height="225"></canvas> </p>
-	<p> <a href="#" onclick="draw_a();" class="w3-btn w3-black">Create border</a> </p>
-	
-	<p> <canvas id="b" width="100" height="50"></canvas> </p>
-	<p> <a href="#" onclick="draw_b();" class="w3-btn w3-black">Draw a rectangle!</a> </p>
-	
-	<p> <canvas id="c" width="500" height="375"></canvas> </p>
-	<p> <a href="#" onclick="draw_c();" class="w3-btn w3-black">Create border</a> </p>
-	
-	<p> <canvas id="d" width="200" height="100"></canvas> </p>
-	<p> <a href="#" onclick="draw_d();" class="w3-btn w3-black">Who coded this app?</a> </p>
-	
-	<p> <canvas id="e" width="177" height="113"></canvas> </p>
-	<p> <a href="#" onclick="draw_e();" class="w3-btn w3-black">Click to see Pikachu</a> </p>
-	
-	<p> <a href="#" onclick="clearRect();" class="w3-btn w3-black">Clear rectangle canvas</a> </p>
+	<canvas id="myCanvas" width="400" height="300"></canvas>
+   
+	<p> <a href="#" onclick="draw_a();" class="w3-btn w3-black">Draw a rectangle!</a> </p>
+	<p> <a href="#" onclick="draw_b();" class="w3-btn w3-black">Who coded this app?</a> </p>
+	<p> <a href="#" onclick="draw_c();" class="w3-btn w3-black">Draw Pikachu!</a> </p>
+	<p> <a href="#" onclick="clearCanvas();" class="w3-btn w3-black">Clear canvas</a> </p>
 		
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-
+</div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
