@@ -48,8 +48,7 @@ function draw_b() {
 	var b_canvas = document.getElementById("myCanvas"); // shows my name
 	var b_context = b_canvas.getContext("2d"); // drawing context
 		b_context.font = "bold 12px sans-serif"; // changes font style
-		b_context.fillText("Syed Akbar", 248, 43);
-		b_context.fillText("y", 58, 165);	
+		b_context.fillText("Syed Akbar", 248, 43);	
 }
 function draw_c() {
 	var c_canvas = document.getElementById("myCanvas"); // shows image
@@ -57,13 +56,13 @@ function draw_c() {
 	var pikachu = new Image(); // shows image of Pikachu
  		pikachu.src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png";
  	 	pikachu.onload = function() {
-    		context.drawImage(pikachu, 0, 0);
+    		context.drawImage(pikachu, 250, 250);
   };
 }
 function clearCanvas() {
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      var canvas = document.getElementById("myCanvas"); // clears canvas
+      var clear_context = clear_canvas.getContext("2d"); // drawing context
+     		clear_context.clearRect(0, 0, canvas.width, canvas.height);
 }
 </script>
 
