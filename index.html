@@ -39,27 +39,29 @@ var docMod = document.lastModified; // loads last modified time stamp into docMo
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 
-var a_canvas = document.getElementById("a"); // first canvas w/ border
-
-var c_canvas = document.getElementById("c"); // third canvas
-var context = c_canvas.getContext("2d");
-				
+function draw_a() {
+var a_canvas = document.getElementById("a"); // first canvas to show border
+}			
 function draw_b() { 
-  var b_canvas = document.getElementById("b"); // second canvas
+  var b_canvas = document.getElementById("b"); // second canvas to show rectangle
   var b_context = b_canvas.getContext("2d"); // drawing context for second canvas
   b_context.fillRect(50, 25, 150, 100); // draws rectangle
 	b_context.clearRect(50, 25, 150, 100); // clears rectangle
 }
+function draw_c() {
+var c_canvas = document.getElementById("c"); // third canvas to show ?
+var context = c_canvas.getContext("2d"); // pushes canvas through
+}
 function draw_d() {
-var d_canvas = document.getElementById("d"); // fourth canvas
+var d_canvas = document.getElementById("d"); // fourth canvas to show name
 var d_context.font = "bold 12px sans-serif"; // changes font style
 d_context.fillText("Syed Akbar", 248, 43);
 d_context.fillText("y", 58, 165);	
 }
 function draw_e() {
-var e_canvas = document.getElementById("e");
-var e_context = canvas.getContext("2d");
-var pikachu = new Image();
+var e_canvas = document.getElementById("e"); // fifth canvas to show image
+var e_context = canvas.getContext("2d"); // drawing context for fifth canvas
+var pikachu = new Image(); // shows image of Pikachu
   pikachu.src = "images/https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png";
   pikachu.onload = function() {
     context.drawImage(pikachu, 0, 0);
@@ -96,14 +98,19 @@ var pikachu = new Image();
 	
 <div id="content" class="w3-container">
 	<p> <canvas id="a" width="300" height="225"></canvas> </p>
+	<p> <a href="#" onclick="draw_a();" class="w3-btn w3-black">Create border</a> </p>
 	
 	<p> <canvas id="b" width="100" height="50"></canvas> </p>
+	<p> <a href="#" onclick="draw_b();" class="w3-btn w3-black">Draw a rectangle!</a> </p>
 	
 	<p> <canvas id="c" width="500" height="375"></canvas> </p>
+	<p> <a href="#" onclick="draw_c();" class="w3-btn w3-black">Create border</a> </p>
 	
 	<p> <canvas id="d" width="200" height="100"></canvas> </p>
+	<p> <a href="#" onclick="draw_d();" class="w3-btn w3-black">Who coded this app?</a> </p>
 	
 	<p> <canvas id="e" width="177" height="113"></canvas> </p>
+	<p> <a href="#" onclick="draw_e();" class="w3-btn w3-black">Click to see Pikachu</a> </p>
 	
 	<p> <a href="#" onclick="clearRect();" class="w3-btn w3-black">Clear rectangle canvas</a> </p>
 		
